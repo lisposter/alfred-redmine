@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>li.zhu.alfred.redmine</string>
+	<key>connections</key>
+	<dict>
+		<key>316EA1E3-2D34-421F-A198-D42E7F33F582</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>54D7220F-A9D1-4F55-A487-743EF4AA3299</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>lisposter</string>
+	<key>description</key>
+	<string>workflow for Redmine</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Redmine</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>redmine</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Wait</string>
+				<key>script</key>
+				<string>/usr/local/bin/node ./index.js {query}</string>
+				<key>subtext</key>
+				<string>Search issues about {query} assigned to me.</string>
+				<key>title</key>
+				<string>Search issues assigned to me.</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>316EA1E3-2D34-421F-A198-D42E7F33F582</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/local/bin/node &lt;&lt;-'EON'
+require("./lib/action")("{query}");
+EON</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>54D7220F-A9D1-4F55-A487-743EF4AA3299</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>316EA1E3-2D34-421F-A198-D42E7F33F582</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>54D7220F-A9D1-4F55-A487-743EF4AA3299</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://zhu.li</string>
+</dict>
+</plist>
